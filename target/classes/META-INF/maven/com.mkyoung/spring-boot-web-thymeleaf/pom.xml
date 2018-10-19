@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    <groupId>com.mkyoung</groupId>
+	<artifactId>spring-boot-web-thymeleaf</artifactId>
+	<packaging>jar</packaging>
+	<name>Spring Boot Web Thymeleaf Example</name>
+	<description>Spring Boot Web JSP Example</description>
+	<url>https://www.mkyong.com</url>
+	<version>1.1.0-SNAPSHOT</version>
+	
+<repositories>
+<repository>
+<id>nexus</id>
+<name>Packet Systems Internal Repository</name>
+<url>http://172.16.182.179:8081/repository/maven-proxy-sss/</url>
+</repository>
+</repositories>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.2.RELEASE</version>
+	</parent>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+<dependency>
+<groupId>org.slf4j</groupId>
+<artifactId>slf4j-api</artifactId>
+</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+		<!-- hot swapping, disable cache for template, enable live reload -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- Optional, for bootstrap -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.7</version>
+		</dependency>
+
+	</dependencies>
+	
+<distributionManagement>
+
+<repository>
+<id>nexus</id>
+<name>maven-proxy-sss</name>
+<url>http://172.16.182.179:8081/repository/maven-proxy-sss/</url>
+</repository>
+
+<snapshotRepository>
+<id>nexus</id>
+<name>maven-snapshots</name>
+<url>http://172.16.182.179:8081/repository/maven-snapshots/</url>
+</snapshotRepository>
+
+
+</distributionManagement>
+
+
+
+	<build>
+		<plugins>
+			<!-- Package as an executable jar/war -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
